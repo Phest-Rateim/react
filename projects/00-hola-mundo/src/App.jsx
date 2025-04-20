@@ -1,64 +1,71 @@
 import { useState, useEffect } from "react";
 import "../css.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faAppleWhole } from "@fortawesome/free-solid-svg-icons";
+
 export default function App() {
-  const [snake, setSnake] = useState([45]);
-  const [food, setFood] = useState();
-  const [cells, setCells] = useState(() => {
-    let initialCells = [];
-    let initialFood;
-    for (let i = 0; i < 100; i++) {
-      initialCells.push({ id: i, value: "" });
+  const [board, setBoard] = useState(() => {
+    let refinedBoard = Array(5)
+      .fill()
+      .map(() => Array(10).fill(""));
+    // Generar un array de letras aleatorias (cada letra aparece exactamente 2 veces)
+    function generarLetrasParejas(totalParejas) {
+      const letras = [];
+      const letrasDisponibles = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
+
+      for (let i = 0; i < totalParejas; i++) {
+        const randomIndex = Math.floor(
+          Math.random() * letrasDisponibles.length,
+        );
+        const letra = letrasDisponibles.splice(randomIndex, 1)[0];
+        letras.push(letra, letra); // Añadimos la letra dos veces
+      }
+
+      // Mezclar las letras para distribución aleatoria
+      return letras;
     }
-    do {
-      initialFood = Math.floor(Math.random() * 100);
-      initialCells[initialFood].value = <FontAwesomeIcon icon={faAppleWhole} />;
-      setFood(initialFood);
-      initialCells[snake[0]].value = "#";
-    } while (snake === initialFood);
-    return initialCells;
+
+    // Asignar las letras a la matriz
+    function asignarLetras(matriz) {
+      const totalCeldas = matriz.flat().length;
+      const totalParejas = totalCeldas / 2;
+      const letrasMezcladas = generarLetrasParejas(totalParejas);
+
+      let index = 0;
+      return matriz.map((fila) => fila.map(() => letrasMezcladas[index++]));
+    } // Matriz resultante con letras asignadas en parejas
+    return asignarLetras(refinedBoard);
   });
 
-  useEffect(() => {
-    const foodCell = Math.floor(Math.random() * 100);
-    // Programar la actualización del estado después de 1 segundo
-    const timer = setTimeout(() => {
-      setCells((prevCells) => {
-        const newCells = [...prevCells]; // 1. Copiar el array original
-        newCells[food].value = "";
-        setFood(foodCell);
-        newCells[snake[0]].value = "#";
-        newCells[foodCell] = {
-          ...newCells[foodCell],
-          value: <FontAwesomeIcon icon={faAppleWhole} />,
-        }; // 2. Copiar y modificar el primer elemento
-        return newCells; // 3. Retornar el nuevo array
-      });
-    }, 10000);
+  // Función para actualizar un valor específico
+  const actualizarCelda = (fila, columna, valor) => {
+    const nuevaMatriz = [...matriz];
+    nuevaMatriz[fila][columna] = valor;
+    setMatriz(nuevaMatriz);
+  };
 
-    // Limpiar el timer si el componente se desmonta o el efecto se re-ejecuta
-    return () => clearTimeout(timer);
-  }, [cells]);
+  useEffect(() => {}, []);
 
   return (
     <>
-      <div className="game-container">
-        <h2>Snake Game</h2>
-        <div className="game-board">
-          {cells.map((cell) => (
-            <div
-              id={cell.id}
-              key={cell.id}
-              className="cell"
-              onClick={() => {
-                spawnFood(cell.id);
-              }}
-            >
-              {cell.value || ""}
-            </div>
-          ))}
-        </div>
+      <div>
+        <h2>Memory Game</h2>
+        <table>
+          <tbody>
+            {board.map((fila, indexFila) => (
+              <tr className="" key={`fila-${indexFila}`}>
+                {fila.map((valor, indexColumna) => (
+                  <td
+                    key={`celda-${indexFila}-${indexColumna}`}
+                    onClick={() =>
+                      actualizarCelda(indexFila, indexColumna, valor)
+                    }
+                  >
+                    {valor}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </div>
     </>
   );
