@@ -1,181 +1,444 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Indie+Flower&display=swap");
+
 body {
+  font-family: "Indie Flower", cursive;
+  background-color: #e0e8e3;
+  /* Un verde grisáceo muy suave */
+  color: #4a5a52;
+  /* Verde oscuro/azulado para el texto */
+  margin: 0;
+  padding: 0;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   min-height: 100vh;
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3d3c0OC5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIj4KICAgIDxyZWN0IHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIiBmaWxsPSIjZTBlOGUzIi8+CiAgICA8Y2lyY2xlIGN4PSI1MCIgY3k9IjUwIiByPSI0MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjYmNjZDljIiBzdHJva2Utd2lkdGg9IjEiLz4KPC9zdmc+");
+  /* Círculo sutil en tono azul verdoso */
+  background-repeat: repeat;
 }
 
-/* Estilo Minimalista Elegante */
-.todo-app {
-  max-width: 480px;
-  margin: 2rem auto;
-  font-family: "Helvetica Neue", Arial, sans-serif;
-  color: #333;
+/* Cambia el color de fondo y texto al seleccionar */
+::selection {
+  background: #2f4f4f;
+  /* Color de fondo de la selección */
+  color: white;
+  /* Color del texto seleccionado */
 }
 
-.todo-header {
-  text-align: center;
-  margin-bottom: 2rem;
+:focus {
+  outline-color: #f5f5f5;
 }
 
-.todo-title {
-  font-weight: 300;
-  letter-spacing: 1px;
-  color: #444;
-  font-size: 2.2rem;
-  margin-bottom: 0.5rem;
-}
-
-.todo-subtitle {
-  font-weight: 300;
-  color: #888;
-  font-size: 0.9rem;
-  margin-top: 0;
-}
-
-.todo-form {
-  display: flex;
-  margin-bottom: 2rem;
-  border-bottom: 1px solid #e0e0e0;
-  padding-bottom: 1rem;
-}
-
-.todo-input {
-  flex: 1;
-  padding: 0.8rem;
-  border: none;
-  border-bottom: 1px solid #ddd;
-  font-size: 1rem;
-  background: transparent;
-  transition: border-color 0.3s ease;
-}
-
-.todo-input:focus {
-  outline: none;
-  border-color: #999;
-}
-
-.todo-button {
-  background: transparent;
-  border: 1px solid #ddd;
-  color: #666;
-  padding: 0 1.5rem;
-  margin-left: 1rem;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  font-weight: 300;
-}
-
-.todo-button:hover {
-  border-color: #999;
-  color: #333;
-}
-
-.filter-container {
-  margin-bottom: 1.5rem;
-  border-bottom: 1px solid #e0e0e0;
-  padding-bottom: 1rem;
-}
-
-.filter-input {
+.container {
+  background-color: #f8f8f8;
+  /* Blanco casi puro para el contenido */
+  padding: 40px;
+  border: 3px dashed #a3b1a8;
+  /* Borde punteado en tono verde/gris */
+  box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.2);
   width: 100%;
-  padding: 0.8rem;
+  max-width: 600px;
+  box-sizing: border-box;
+  position: relative;
+  transform: rotate(-1deg);
+  /* Ligeramente rotado */
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.container::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  border: 8px solid #c5d6cc;
+  pointer-events: none;
+  transform: rotate(1deg);
+  z-index: -1;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 40px;
+  position: relative;
+  padding-bottom: 15px;
+}
+
+header h1 {
+  font-family: "Dancing Script", cursive;
+  font-size: 3.5em;
+  color: #2f4f4f;
+  margin: 0;
+  font-weight: 700;
+  text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.1);
+  transform: rotate(2deg);
+  display: inline-block;
+}
+
+header::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 5px;
+  transform: translateX(-50%) rotate(-2deg);
+  width: 70%;
+  height: 2px;
+  background-color: #a3b1a8;
+  opacity: 0.7;
+}
+
+/* --- Estilos para la sección de entrada de tareas --- */
+.task-input-section {
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #cfe4db;
+  display: flex;
+  /* Ajustamos flex-wrap y align-items para que los 3 elementos funcionen bien */
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  /* Espacio entre los elementos */
+}
+
+#new-task {
+  flex-grow: 1;
+  /* El input crecerá para ocupar espacio */
+  /* flex-basis: 200px; /* Sugerencia de tamaño base si es necesario */
+  padding: 12px;
   border: none;
-  border-bottom: 1px solid #ddd;
-  font-size: 0.9rem;
-  background: transparent;
-  transition: border-color 0.3s ease;
-  color: #666;
-  font-weight: 300;
+  font-family: "Indie Flower", cursive;
+  font-size: 1.1em;
+  background-color: #f8f8f8;
+  color: #4a5a52;
+  box-sizing: border-box;
+  min-width: 360px;
+  /* Asegura que el input no se vuelva demasiado pequeño */
+  border-bottom: 1px solid transparent; /* Borde transparente del mismo grosor que en foco */
+  transition: border-color 0.3s ease; /* Transición suave solo para el color */
 }
 
-.filter-input:focus {
+/* Estilo para el input cuando tiene el "focus" */
+#new-task:focus {
+  /* Muy importante: elimina el outline por defecto del navegador */
   outline: none;
-  border-color: #999;
+  border-bottom-color: #a3b1a8;
+  /* Muestra un color en el borde de abajo */
 }
 
-.filter-input::placeholder {
-  color: #bbb;
-  font-weight: 300;
+/* --- Estilo general para TODOS los botones con rotación --- */
+button {
+  padding: 10px 18px;
+  background-color: #c5d6cc;
+  /* Color base */
+  color: #2f4f4f;
+  border: none;
+  font-family: "Indie Flower", cursive;
+  font-size: 1em;
+  cursor: pointer;
+  transition:
+    background-color 0.3s ease,
+    transform 0.2s ease;
+  flex-shrink: 0;
+  /* Evita que los botones se encojan */
+  transform: rotate(1.5deg);
+  /* Rotación aplicada a todos los botones */
+  display: inline-flex;
+  /* Usar flexbox para alinear contenido (icono + texto) */
+  align-items: center;
+  /* Centrar verticalmente */
+  gap: 5px;
+  /* Espacio entre icono y texto si hay */
 }
 
-.todo-list {
+button:hover {
+  background-color: #a3b1a8;
+  transform: rotate(-1.5deg) scale(1.05);
+  /* Mantener rotación en hover */
+}
+
+button:active {
+  transform: rotate(-1.5deg) scale(1);
+}
+
+/* Ajuste específico para el botón de añadir que está en task-input-section */
+#add-task-btn {
+  /* Ya hereda los estilos generales de button */
+  /* Si necesitas algún ajuste específico para añadir */
+}
+
+/* Estilo para el botón de mostrar filtro (ya hereda los estilos generales de button) */
+#show-filter-btn {
+  /* Ya hereda los estilos generales de button */
+  /* El icono ya está dentro del HTML, y el gap en el estilo general button maneja el espacio */
+}
+
+#show-filter-btn svg {
+  stroke: #2f4f4f;
+  /* Color del icono */
+}
+
+/* Estilo para el contenedor del filtro - INICIALMENTE OCULTO */
+.filter-section {
+  display: none;
+  /* Ocultar por defecto */
+  margin-bottom: 30px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #cfe4db;
+  flex-wrap: wrap;
+  gap: 15px;
+  align-items: center;
+  width: 100%;
+  /* Ocupa el ancho completo debajo de la sección de añadir */
+}
+
+/* Estilo para mostrar el contenedor del filtro cuando la clase 'visible' está presente */
+.filter-section.visible {
+  display: flex;
+  /* Mostrar como flexbox cuando está visible */
+}
+
+.filter-section input[type="text"] {
+  flex-grow: 1;
+  padding: 12px;
+  border: none;
+  border-bottom: 1px solid transparent; /* Borde transparente del mismo grosor que en foco */
+  transition: border-color 0.3s ease; /* Transición suave solo para el color */
+  font-family: "Indie Flower", cursive;
+  font-size: 1.1em;
+  background-color: #f8f8f8;
+  color: #4a5a52;
+  box-sizing: border-box;
+  min-width: 100px;
+  /* Asegura que el input de filtro no se vuelva demasiado pequeño */
+}
+
+.filter-section input[type="text"]:focus {
+  outline: none;
+  border-bottom-color: #a3b1a8;
+}
+
+.filter-section button {
+  /* Botones dentro del contenedor de filtro ya heredan el estilo general button */
+  /* Si necesitas un ajuste específico para estos botones */
+  padding: 10px 18px;
+}
+
+.filter-section #clear-filter-btn {
+  background-color: #e0e8e3;
+  color: #4a5a52;
+}
+
+.filter-section #clear-filter-btn:hover {
+  background-color: #d3ddda;
+}
+
+.task-list-section ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-.todo-item {
-  display: flex;
-  align-items: center;
-  padding: 1rem 0;
-  border-bottom: 1px solid #f0f0f0;
+.rotate-left {
+  transform: rotate(-0.5deg);
 }
 
-.todo-checkbox {
-  appearance: none;
-  width: 20px;
-  height: 20px;
-  border: 1px solid #ccc;
-  border-radius: 2px;
-  margin-right: 1rem;
-  cursor: pointer;
-  position: relative;
-  transition: all 0.2s ease;
+.rotate-right {
+  transform: rotate(0.5deg);
 }
 
-.todo-checkbox:checked {
+.task-list-section li {
   background-color: #f8f8f8;
-  border-color: #aaa;
+  border-bottom: 1px dashed #cfe4db;
+  padding: 12px 0;
+  margin-bottom: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.2em;
+  line-height: 1.5;
+  /* Rotación simulada con CSS */
 }
 
-.todo-checkbox:checked::after {
-  content: "";
-  position: absolute;
-  left: 6px;
-  top: 2px;
-  width: 5px;
-  height: 10px;
-  border: solid #333;
-  border-width: 0 2px 2px 0;
-  transform: rotate(45deg);
+.task-list-section li:last-child {
+  border-bottom: none;
 }
 
-.todo-text {
-  flex: 1;
-  font-weight: 300;
-  font-size: 1rem;
-  transition: all 0.3s ease;
+/* Estilo para el texto de la tarea - hacerlo clickeable */
+.task-list-section li span {
+  flex-grow: 1;
+  margin-right: 10px;
+  word-break: break-word;
+  cursor: pointer;
 }
 
-.todo-item.completed .todo-text {
-  color: #999;
+/* Estilo para el botón eliminar (ya hereda el estilo general button) */
+.task-list-section li button {
+  background-color: #ff9999;
+  color: #4a5a52;
+  padding: 6px 10px;
+  font-size: 0.9em;
+  border: 1px solid #ff7f7f;
+  /* No aplicar rotación adicional aquí, ya la hereda del estilo general button */
+}
+
+/* Ajuste hover específico para el botón eliminar si hereda rotación */
+.task-list-section li button:hover {
+  /* Ya hereda el efecto hover del estilo general button */
+  background-color: #ff7f7f;
+  border-color: #e06666;
+}
+
+/* --- Estilo para tareas completadas --- */
+.task-list-section li.completed {
+  text-decoration: line-through;
+  color: #8a9a92;
+  background-color: #f0f5f3;
+  transform: none;
+  opacity: 0.7;
+}
+
+.task-list-section li.completed span {
   text-decoration: line-through;
 }
 
-.delete-btn {
-  background: none;
-  border: none;
-  color: #ccc;
+.vintage-footer {
+  width: 100%;
+  display: flex;
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+  padding: 2rem 0; /* Espaciado vertical para el footer */
+  margin: 0;
+  position: relative;
+}
+
+.stamp {
+  border: 2px dashed #a3b1a8; /* Borde dashed */
+  background-color: white; /* Fondo blanco */
+  padding: 10px 25px; /* Espaciado interno */
+  transform: rotate(-4deg); /* Rotación hacia la izquierda */
+  transform-origin: center; /* Pivote de rotación en el centro */
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Sombra opcional para profundidad */
+
+  /* Estilos tipográficos adicionales */
+  font-family: "Dancing Script", cursive;
   font-size: 1.2rem;
-  cursor: pointer;
-  opacity: 0;
-  transition: all 0.3s ease;
-  margin-left: 1rem;
+  letter-spacing: 1px;
 }
 
-.todo-item:hover .delete-btn {
-  opacity: 1;
-}
+/* Estilos para telefonos */
+@media (max-width: 600px) {
+  body {
+    padding: 0;
+  }
 
-.delete-btn:hover {
-  color: #888;
-}
+  .container {
+    padding: 25px;
+    transform: rotate(0deg);
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
 
-.todo-footer {
-  text-align: center;
-  margin-top: 2rem;
-  color: #aaa;
-  font-size: 0.8rem;
-  font-weight: 300;
+  .container::before {
+    transform: rotate(1deg) translateZ(0);
+  }
+
+  header {
+    margin-bottom: 30px;
+  }
+
+  header h1 {
+    font-size: 2.5em;
+    transform: rotate(0deg);
+  }
+
+  header::after {
+    transform: translateX(-50%) rotate(0deg);
+  }
+
+  /* Ajustes para la sección de añadir tarea en móviles */
+  .task-input-section {
+    flex-direction: column;
+    /* Apilar en móvil */
+    gap: 10px;
+    align-items: stretch;
+    /* Estirar elementos */
+  }
+
+  #new-task {
+    width: 100%;
+    /* Ancho completo */
+    min-width: 0;
+    /* Permitir que se encoja si es necesario */
+  }
+
+  /* Botones en móviles - Quitar rotación y ancho completo */
+  button {
+    width: 100%;
+    box-sizing: border-box;
+    transform: rotate(0deg) !important;
+    /* Forzar sin rotación en móvil */
+    padding: 10px;
+    justify-content: center;
+    /* Centrar contenido del botón */
+    gap: 5px;
+    /* Espacio entre icono y texto */
+  }
+
+  button:hover {
+    transform: scale(1.05) !important;
+    /* Ajustar hover sin rotación */
+  }
+
+  /* El contenedor del filtro ya se comporta bien como flex column en móvil */
+
+  .filter-section.visible {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .filter-section input[type="text"],
+  .filter-section button {
+    width: 100%;
+    box-sizing: border-box;
+    transform: rotate(0deg) !important;
+    /* Sin rotación en móvil */
+  }
+
+  .filter-section button:hover {
+    transform: scale(1.05) !important;
+    /* Ajustar hover sin rotación */
+  }
+
+  .rotate-left,
+  .rotate-right {
+    transform: none !important;
+  }
+
+  .task-list-section li {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 10px 0;
+    /* Asegurar que no roten */
+    transform: translateZ(0);
+  }
+
+  .task-list-section li span {
+    margin-right: 0;
+    cursor: pointer;
+  }
+
+  .task-list-section li button {
+    width: auto;
+    align-self: flex-end;
+    padding: 5px 8px;
+    transform: rotate(0deg) !important;
+    /* Asegurar que no roten */
+  }
+
+  .task-list-section li button:hover {
+    transform: scale(1.1) !important;
+  }
 }
