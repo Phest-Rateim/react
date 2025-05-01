@@ -79,7 +79,6 @@ function App() {
               id="new-task"
               placeholder="Tomar nota..."
               autoComplete="off"
-              autoFocus
               value={newTask}
               onChange={(e) => {
                 setNewTask(e.target.value);
