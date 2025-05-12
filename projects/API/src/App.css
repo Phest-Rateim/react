@@ -1,0 +1,767 @@
+/* Comic Book Style */
+@import url("https://fonts.googleapis.com/css2?family=Bangers&family=Comic+Neue:wght@400;700&display=swap");
+
+/* Variables de color */
+:root {
+  --comic-red: #ed1d24;
+  --comic-yellow: #ffd700;
+  --comic-blue: #00a8e8;
+  --comic-black: #000000;
+  --comic-white: #ffffff;
+  --comic-bg: #f0f0f0;
+  --comic-shadow: #000000; /* Sombra principal */
+  --comic-border: 3px solid var(--comic-black); /* Borde estándar */
+  --comic-border-thick: 5px solid var(--comic-black); /* Borde más grueso */
+  --comic-panel-bg: #fff; /* Fondo de panel por defecto */
+  --comic-panel-alt-bg: #ffeeba; /* Fondo alternativo para paneles */
+}
+
+/* Animaciones */
+@keyframes pop-in {
+  0% {
+    transform: scale(0.8) rotate(-5deg);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.05) rotate(2deg);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+@keyframes shake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  20%, 60% {
+    transform: translateX(-5px);
+  }
+  40%, 80% {
+    transform: translateX(5px);
+  }
+}
+
+@keyframes pulse-shadow {
+  0% {
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 15px rgba(0, 0, 0, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+  }
+}
+
+@keyframes border-pop {
+  0% {
+    border-width: 3px;
+  }
+  50% {
+    border-width: 5px;
+  }
+  100% {
+    border-width: 3px;
+  }
+}
+
+
+/* Asegura que padding y border no aumenten el tamaño del elemento */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  background: repeating-linear-gradient(
+    45deg,
+    var(--comic-bg),
+    var(--comic-bg) 20px,
+    #e0e0e0 20px,
+    #e0e0e0 40px
+  );
+  min-height: 100vh;
+  margin: 0;
+  font-family: "Comic Neue", cursive;
+  color: var(--comic-black); /* Color de texto por defecto */
+  line-height: 1.6; /* Mejorar legibilidad */
+  padding-bottom: 50px; /* Espacio al final para el contenido */
+  padding-top: 20px; /* Espacio arriba */
+}
+
+.app-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  position: relative;
+  /* Añadir un patrón de semitono sutil al contenedor principal */
+  background:
+    radial-gradient(circle, rgba(0, 0, 0, 0.1) 1px, transparent 1px) 0 0 / 4px 4px,
+    radial-gradient(circle, rgba(0, 0, 0, 0.1) 1px, transparent 1px) 2px 2px / 4px 4px;
+}
+
+/* Comic Header */
+.comic-header {
+  text-align: center;
+  margin-bottom: 40px;
+  padding: 20px;
+  background: var(--comic-white);
+  border: var(--comic-border-thick); /* Borde más grueso */
+  border-radius: 10px;
+  box-shadow: 10px 10px 0 var(--comic-shadow); /* Sombra más pronunciada */
+  position: relative;
+  overflow: hidden; /* Asegura que el pseudo-elemento no se desborde */
+  animation: pop-in 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards; /* Animación de entrada */
+}
+
+/* Detalle de línea de acción en el header */
+.comic-header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background:
+    linear-gradient(
+      45deg,
+      transparent 0%,
+      transparent 50%,
+      rgba(0, 0, 0, 0.1) 50%,
+      rgba(0, 0, 0, 0.1) 100%
+    );
+  background-size: 20px 20px;
+  opacity: 0.3; /* Opacidad sutil */
+  z-index: 0;
+}
+
+
+.comic-title {
+  font-family: "Bangers", cursive;
+  font-size: 4rem; /* Tamaño de fuente más grande */
+  color: var(--comic-red);
+  text-shadow: 4px 4px 0 var(--comic-black); /* Sombra de texto más grande */
+  letter-spacing: 3px; /* Espaciado entre letras */
+  margin: 0;
+  line-height: 1.1;
+  position: relative;
+  z-index: 1; /* Asegura que el texto esté sobre el pseudo-elemento */
+}
+
+.app-subtitle {
+  font-family: "Bangers", cursive;
+  font-size: 2rem; /* Tamaño de fuente más grande */
+  color: var(--comic-blue);
+  text-shadow: 3px 3px 0 var(--comic-black); /* Sombra de texto más grande */
+  margin-top: 5px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Joke Container - Speech Bubble */
+.joke-container {
+  background: var(--comic-white);
+  border: var(--comic-border);
+  border-radius: 20px;
+  padding: 30px;
+  margin-bottom: 50px; /* Más espacio para la cola */
+  position: relative;
+  box-shadow: 8px 8px 0 var(--comic-shadow); /* Sombra más pronunciada */
+  animation: pop-in 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55) 0.2s forwards; /* Animación de entrada con retraso */
+}
+
+/* Cola del bocadillo - Usando solo CSS */
+.joke-container::after {
+  content: "";
+  position: absolute;
+  bottom: -35px; /* Ajustar posición para ser más largo */
+  left: 50px;
+  width: 0; /* Base del triángulo */
+  height: 0; /* Altura del triángulo */
+  border-left: 30px solid transparent; /* Lado izquierdo del triángulo */
+  border-right: 30px solid transparent; /* Lado derecho del triángulo */
+  border-top: 35px solid var(--comic-black); /* Borde superior */
+  filter: drop-shadow(5px 5px 0 var(--comic-shadow)); /* Sombra para la cola */
+  z-index: 0;
+}
+
+/* Simular el color blanco dentro de la cola */
+.joke-container::before {
+  content: "";
+  position: absolute;
+  bottom: -30px; /* Ligeramente por encima del after */
+  left: 50px; /* Ajustar para centrar con el after */
+  width: 0;
+  height: 0;
+  border-left: 28px solid transparent;
+  border-right: 28px solid transparent;
+  border-top: 32px solid var(--comic-white); /* Relleno blanco */
+  z-index: 1; /* Asegura que esté por encima del borde negro */
+}
+
+.comic-panel {
+  position: relative;
+  padding: 25px; /* Más padding */
+  margin-bottom: 30px; /* Más espacio debajo */
+  border-radius: 10px;
+  border: var(--comic-border);
+  background: var(--comic-panel-bg); /* Fondo por defecto */
+  box-shadow: 4px 4px 0 var(--comic-shadow); /* Sombra más pequeña para paneles internos */
+  box-sizing: border-box;
+  width: 100%;
+  overflow: hidden; /* Para detalles internos */
+}
+
+/* Estilo alternativo para algunos paneles si se necesita */
+.comic-panel.alt-bg {
+    background: var(--comic-panel-alt-bg);
+}
+
+
+.comic-panel .comic-label {
+  font-family: "Bangers", cursive;
+  font-size: 1.4rem; /* Tamaño de fuente más grande */
+  color: var(--comic-yellow);
+  text-shadow: 2px 2px 0 var(--comic-black); /* Sombra de texto más pronunciada */
+  position: absolute;
+  top: -18px; /* Posicionar la etiqueta fuera del panel */
+  left: 20px;
+  background: var(--comic-white); /* Fondo para que se vea sobre el borde */
+  padding: 2px 10px; /* Espaciado alrededor del texto */
+  border: var(--comic-border); /* Borde alrededor de la etiqueta */
+  border-radius: 5px;
+  z-index: 3; /* Asegura que esté por encima del panel y detalles */
+  transform: rotate(-3deg); /* Ligera rotación para un efecto más cómico */
+  box-shadow: 2px 2px 0 var(--comic-shadow); /* Sombra a la etiqueta */
+}
+
+/* Detalle de "Pow!" o "Bam!" detrás de la etiqueta */
+.comic-panel .comic-label::after {
+    content: "!"; /* O puedes usar un icono o una imagen de fondo */
+    font-family: "Bangers", cursive;
+    font-size: 2rem;
+    color: var(--comic-red);
+    position: absolute;
+    top: 50%;
+    right: -15px; /* Posicionar fuera de la etiqueta */
+    transform: translateY(-50%) rotate(15deg);
+    text-shadow: 1px 1px 0 var(--comic-black);
+    z-index: -1; /* Detrás de la etiqueta */
+    opacity: 0.7;
+}
+
+
+.setup {
+  font-size: 1.5rem; /* Tamaño de fuente más grande */
+  font-weight: 700;
+  color: var(--comic-black);
+  margin-bottom: 15px;
+  text-shadow: 1px 1px 0 rgba(0,0,0,0.1); /* Sombra sutil al texto */
+}
+
+.delivery {
+  font-size: 1.4rem; /* Tamaño de fuente más grande */
+  color: var(--comic-black);
+  font-weight: 400;
+  padding-left: 30px;
+  position: relative;
+  font-style: italic; /* Estilo itálico para el remate */
+}
+
+/* Controls Container - Comic Panel */
+.controls-container {
+  background: var(--comic-white);
+  border: var(--comic-border);
+  border-radius: 15px;
+  padding: 25px;
+  box-shadow: 6px 6px 0 var(--comic-shadow);
+  position: relative;
+  margin-top: 40px;
+}
+
+/* Estilo para cada panel dentro del controls-container */
+/* Ya definido arriba con .comic-panel */
+
+
+.radio-group,
+.checkbox-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; /* Más espacio */
+  margin: 15px 0;
+  align-items: center; /* Asegurar alineación */
+}
+
+h3 {
+  font-family: "Bangers", cursive;
+  color: var(--comic-blue);
+  font-size: 2rem; /* Tamaño de fuente más grande */
+  letter-spacing: 1px;
+  margin: 0 0 20px 0; /* Más espacio debajo */
+  text-transform: uppercase;
+  text-shadow: 2px 2px 0 var(--comic-black); /* Sombra al título del panel */
+}
+
+/* Comic Style Inputs */
+.comic-checkbox {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 30px;
+  height: 30px;
+  border: var(--comic-border);
+  margin-right: 8px;
+  position: relative;
+  cursor: pointer;
+  background: var(--comic-white);
+  flex-shrink: 0; /* Evitar que se encoja */
+  transition: transform 0.2s ease-out; /* Animación al hacer click */
+}
+
+.comic-checkbox:checked::before {
+  content: "✓";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2.5rem;
+  color: var(--comic-red);
+  font-weight: bold;
+  line-height: 1;
+}
+
+.comic-checkbox:checked {
+    transform: scale(1.1); /* Ligeramente más grande al marcar */
+}
+
+.comic-checkbox:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  background: #e9ecef; /* Un fondo gris claro */
+}
+
+.comic-checkbox:disabled:checked::before {
+  color: #adb5bd; /* Un color más suave para el checkmark */
+}
+
+/* Estilo para el radio button personalizado */
+.comic-radio {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 28px;
+  height: 28px;
+  border: var(
+    --comic-border
+  ) !important; /* Mantener !important si es necesario */
+  border-radius: 50%;
+  margin: 0 8px 0 0;
+  cursor: pointer;
+  background: var(--comic-white);
+  position: relative;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+   transition: transform 0.2s ease-out; /* Animación al hacer click */
+}
+
+.comic-radio:checked::after {
+  content: "";
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--comic-red);
+  transform: scale(1);
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+}
+
+.comic-radio:checked {
+     transform: scale(1.1); /* Ligeramente más grande al marcar */
+}
+
+
+/* Comic Button */
+.get-joke-btn {
+  display: block; /* Ocupar todo el ancho */
+  width: 100%; /* Asegurar que ocupe todo el ancho */
+  background: var(--comic-yellow);
+  color: var(--comic-black);
+  border: var(--comic-border);
+  padding: 15px 40px;
+  font-family: "Bangers", cursive;
+  font-size: 1.8rem; /* Tamaño de fuente más grande */
+  letter-spacing: 3px; /* Más espaciado */
+  cursor: pointer;
+  text-transform: uppercase;
+  border-radius: 8px;
+  box-shadow: 6px 6px 0 var(--comic-shadow); /* Sombra más pronunciada */
+  transition:
+    transform 0.1s ease,
+    box-shadow 0.1s ease,
+    background 0.1s ease,
+    color 0.1s ease; /* Añadir transiciones para color y fondo */
+  margin-top: 20px;
+  text-align: center; /* Centrar texto */
+}
+
+.get-joke-btn:hover {
+  transform: translate(2px, 2px);
+  box-shadow: 4px 4px 0 var(--comic-shadow);
+}
+
+.get-joke-btn:active {
+  transform: translate(6px, 6px); /* Se hunde más al hacer click */
+  box-shadow: 0 0 0 var(--comic-shadow);
+  background: var(--comic-red); /* Cambiar color al hacer click */
+  color: var(--comic-white);
+}
+
+/* Error Styles */
+.error-message {
+  background: var(--comic-white);
+  border: var(--comic-border-thick); /* Borde más grueso */
+  padding: 30px; /* Más padding */
+  border-radius: 10px;
+  color: var(--comic-red); /* Color de error */
+  font-weight: 700;
+  text-align: center;
+  box-shadow: 6px 6px 0 var(--comic-shadow); /* Sombra más pronunciada */
+  margin-bottom: 20px; /* Espacio debajo */
+  animation: shake 0.5s ease-in-out; /* Animación de sacudida al aparecer */
+}
+
+.error-message h2 {
+  font-family: "Bangers", cursive;
+  font-size: 2.5rem; /* Tamaño de fuente más grande */
+  margin-top: 0;
+  color: var(--comic-black);
+  text-shadow: 2px 2px 0 var(--comic-red); /* Sombra más pronunciada */
+}
+
+.error-message p {
+  font-size: 1.3rem; /* Tamaño de fuente más grande */
+  margin-bottom: 20px; /* Más espacio debajo */
+}
+
+.error-message button {
+  /* Estilo del botón dentro del error */
+  background: var(--comic-red);
+  color: var(--comic-white);
+  border: var(--comic-border);
+  padding: 12px 25px; /* Más padding */
+  font-family: "Bangers", cursive;
+  font-size: 1.5rem; /* Tamaño de fuente más grande */
+  letter-spacing: 1px;
+  cursor: pointer;
+  text-transform: uppercase;
+  border-radius: 8px;
+  box-shadow: 3px 3px 0 var(--comic-black);
+  transition: all 0.1s ease;
+}
+
+.error-message button:hover {
+  transform: translate(1px, 1px);
+  box-shadow: 2px 2px 0 var(--comic-black);
+}
+.error-message button:active {
+  transform: translate(3px, 3px); /* Se hunde más */
+  box-shadow: 0 0 0 var(--comic-black);
+  background: var(--comic-black);
+  color: var(--comic-white);
+}
+
+.loading-indicator {
+  font-family: "Bangers", cursive;
+  font-size: 2.5rem; /* Tamaño de fuente más grande */
+  color: var(--comic-blue);
+  text-align: center;
+  padding: 30px; /* Más padding */
+  letter-spacing: 3px; /* Más espaciado */
+  text-shadow: 3px 3px 0 var(--comic-black); /* Sombra más pronunciada */
+  animation: pulse-shadow 1.5s infinite ease-in-out; /* Animación de pulso en la sombra */
+}
+
+/* Custom Slider */
+.comic-slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 20px; /* Más alto */
+  background: var(--comic-white);
+  border: var(--comic-border);
+  border-radius: 10px; /* Bordes más redondeados */
+  margin: 20px 0;
+  outline: none; /* Eliminar el contorno por defecto al enfocar */
+  box-shadow: inset 3px 3px 6px rgba(0, 0, 0, 0.3); /* Sombra interna más pronunciada */
+  transition: box-shadow 0.3s ease;
+}
+
+.comic-slider:hover {
+    box-shadow: inset 3px 3px 6px rgba(0, 0, 0, 0.5); /* Sombra interna más oscura al pasar el ratón */
+}
+
+.comic-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none; /* Necesario para Firefox */
+  width: 35px; /* Más grande */
+  height: 35px; /* Más grande */
+  background: var(--comic-red);
+  border: var(--comic-border);
+  border-radius: 50%;
+  cursor: pointer;
+  transition:
+    background 0.1s ease,
+    border-color 0.1s ease,
+    transform 0.1s ease,
+    box-shadow 0.1s ease; /* Añadir transiciones */
+  margin-top: -8px; /* Ajuste para centrar el thumb verticalmente */
+  box-shadow: 3px 3px 0 var(--comic-black); /* Sombra al thumb */
+}
+
+.comic-slider::-webkit-slider-thumb:hover {
+  background: var(--comic-blue);
+  border-color: var(--comic-black);
+  transform: scale(1.1); /* Ligeramente más grande al pasar el ratón */
+}
+
+.comic-slider::-webkit-slider-thumb:active {
+  background: var(--comic-yellow);
+  border-color: var(--comic-black);
+  box-shadow: 1px 1px 0 var(--comic-black);
+  transform: translate(2px, 2px); /* Se hunde un poco al hacer click */
+}
+
+/* Estilos para Firefox */
+.comic-slider::-moz-range-thumb {
+  width: 35px; /* Más grande */
+  height: 35px; /* Más grande */
+  background: var(--comic-red);
+  border: var(--comic-border);
+  border-radius: 50%;
+  cursor: pointer;
+  transition:
+    background 0.1s ease,
+    border-color 0.1s ease,
+    transform 0.1s ease,
+    box-shadow 0.1s ease; /* Añadir transiciones */
+  box-shadow: 3px 3px 0 var(--comic-black); /* Sombra al thumb */
+}
+
+.comic-slider::-moz-range-thumb:hover {
+  background: var(--comic-blue);
+  border-color: var(--comic-black);
+   transform: scale(1.1); /* Ligeramente más grande al pasar el ratón */
+}
+
+.comic-slider::-moz-range-thumb:active {
+  background: var(--comic-yellow);
+  border-color: var(--comic-black);
+  box-shadow: 1px 1px 0 var(--comic-black);
+   transform: translate(2px, 2px); /* Se hunde un poco al hacer click */
+}
+
+
+.amount-display {
+  display: inline-block;
+  padding: 8px 20px; /* Más padding */
+  background: var(--comic-blue);
+  color: var(--comic-white);
+  border: var(--comic-border);
+  border-radius: 8px;
+  font-family: "Bangers", cursive;
+  font-size: 1.6rem; /* Tamaño de fuente más grande */
+  margin-top: 15px; /* Más espacio arriba */
+  text-shadow: 2px 2px 0 var(--comic-black); /* Sombra más pronunciada */
+  box-shadow: 3px 3px 0 var(--comic-shadow); /* Sombra */
+   transform: rotate(2deg); /* Ligera rotación */
+}
+
+/* Search Input */
+.comic-search {
+  width: 100%; /* Usar 100% con box-sizing: border-box */
+  padding: 15px; /* Más padding */
+  border: var(--comic-border);
+  border-radius: 8px;
+  font-size: 1.3rem; /* Tamaño de fuente más grande */
+  font-family: "Comic Neue", cursive;
+  margin: 15px 0; /* Más espacio */
+  box-sizing: border-box;
+  background: var(--comic-white);
+  box-shadow: 4px 4px 0 var(--comic-shadow); /* Sombra más pronunciada */
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.1s ease; /* Añadir transiciones */
+}
+
+.comic-search::placeholder {
+  color: #6c757d; /* Color de placeholder más suave */
+  opacity: 1; /* Asegurar visibilidad en Firefox */
+  font-style: italic; /* Placeholder en itálica */
+}
+
+.comic-search:focus {
+  outline: none;
+  border-color: var(--comic-blue);
+  box-shadow: 4px 4px 0 var(--comic-blue);
+  transform: translate(1px, 1px); /* Ligeramente movido al enfocar */
+}
+
+/* Estilos para etiquetas y grupos */
+label {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Aumentar el espacio */
+  font-size: 1.2rem; /* Tamaño de fuente más grande */
+  line-height: 1.5; /* Mejorar interlineado */
+  margin: 8px 0; /* Más espacio */
+  cursor: pointer; /* Indicar que la etiqueta es interactiva */
+  text-shadow: 0.5px 0.5px 0 rgba(0,0,0,0.1); /* Sombra sutil */
+}
+
+label:hover {
+    color: var(--comic-blue); /* Cambiar color al pasar el ratón */
+}
+
+
+/* Media Queries para responsividad básica */
+@media (max-width: 600px) {
+  .app-container {
+    padding: 10px; /* Menos padding en pantallas pequeñas */
+  }
+
+  .comic-title {
+    font-size: 3rem; /* Reducir tamaño de título */
+  }
+
+  .app-subtitle {
+    font-size: 1.8rem;
+  }
+
+  .joke-container,
+  .controls-container,
+  .comic-header,
+  .comic-panel {
+    padding: 20px; /* Reducir padding en paneles */
+    box-shadow: 5px 5px 0 var(--comic-shadow); /* Reducir sombra */
+  }
+
+   .comic-header {
+       box-shadow: 8px 8px 0 var(--comic-shadow);
+   }
+
+  .joke-container::after,
+  .joke-container::before {
+    left: 30px; /* Ajustar posición de la cola */
+     bottom: -30px;
+     border-left: 25px solid transparent;
+     border-right: 25px solid transparent;
+     border-top: 30px solid var(--comic-black);
+  }
+
+   .joke-container::before {
+       bottom: -26px;
+        border-left: 23px solid transparent;
+        border-right: 23px solid transparent;
+        border-top: 27px solid var(--comic-white);
+   }
+
+
+  .setup,
+  .delivery {
+    font-size: 1.3rem; /* Reducir tamaño de fuente de los chistes */
+  }
+
+  h3 {
+    font-size: 1.8rem; /* Reducir tamaño de títulos de panel */
+  }
+
+  .get-joke-btn {
+    font-size: 1.5rem; /* Reducir tamaño del botón */
+    padding: 12px 30px;
+     box-shadow: 5px 5px 0 var(--comic-shadow);
+  }
+
+    .get-joke-btn:active {
+        transform: translate(5px, 5px);
+        box-shadow: 0 0 0 var(--comic-shadow);
+    }
+
+
+  .radio-group,
+  .checkbox-group {
+    gap: 15px; /* Reducir espacio entre checkboxes/radios */
+  }
+
+  .comic-checkbox,
+  .comic-radio {
+    width: 28px; /* Reducir tamaño de checkboxes/radios */
+    height: 28px;
+  }
+
+  .comic-checkbox:checked::before {
+    font-size: 2.2rem; /* Ajustar tamaño del checkmark */
+  }
+  .comic-radio:checked::after {
+    width: 15px; /* Ajustar tamaño del círculo del radio */
+    height: 15px;
+  }
+
+  .comic-slider {
+    height: 18px;
+  }
+
+  .comic-slider::-webkit-slider-thumb,
+  .comic-slider::-moz-range-thumb {
+    width: 30px; /* Reducir tamaño del thumb del slider */
+    height: 30px;
+     margin-top: -7px;
+  }
+
+  .amount-display {
+    font-size: 1.3rem; /* Reducir tamaño del display de cantidad */
+    padding: 6px 15px;
+  }
+
+  .comic-search {
+    font-size: 1.1rem; /* Reducir tamaño del input de búsqueda */
+    padding: 12px;
+     box-shadow: 3px 3px 0 var(--comic-shadow);
+  }
+
+   .comic-search:focus {
+        box-shadow: 3px 3px 0 var(--comic-blue);
+   }
+
+
+  label {
+    font-size: 1.1rem; /* Reducir tamaño de las etiquetas */
+  }
+
+   .error-message {
+       padding: 20px;
+        box-shadow: 5px 5px 0 var(--comic-shadow);
+   }
+
+   .error-message h2 {
+       font-size: 2rem;
+   }
+
+   .error-message p {
+       font-size: 1.1rem;
+   }
+
+   .error-message button {
+       padding: 10px 20px;
+        font-size: 1.3rem;
+   }
+
+   .loading-indicator {
+       font-size: 2rem;
+        padding: 20px;
+   }
+
+}
