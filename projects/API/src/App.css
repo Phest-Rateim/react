@@ -32,13 +32,16 @@
 }
 
 @keyframes shake {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateX(0);
   }
-  20%, 60% {
+  20%,
+  60% {
     transform: translateX(-5px);
   }
-  40%, 80% {
+  40%,
+  80% {
     transform: translateX(5px);
   }
 }
@@ -66,7 +69,6 @@
     border-width: 3px;
   }
 }
-
 
 /* Asegura que padding y border no aumenten el tamaño del elemento */
 *,
@@ -99,8 +101,10 @@ body {
   position: relative;
   /* Añadir un patrón de semitono sutil al contenedor principal */
   background:
-    radial-gradient(circle, rgba(0, 0, 0, 0.1) 1px, transparent 1px) 0 0 / 4px 4px,
-    radial-gradient(circle, rgba(0, 0, 0, 0.1) 1px, transparent 1px) 2px 2px / 4px 4px;
+    radial-gradient(circle, rgba(0, 0, 0, 0.1) 1px, transparent 1px) 0 0 / 4px
+      4px,
+    radial-gradient(circle, rgba(0, 0, 0, 0.1) 1px, transparent 1px) 2px 2px /
+      4px 4px;
 }
 
 /* Comic Header */
@@ -125,19 +129,17 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background:
-    linear-gradient(
-      45deg,
-      transparent 0%,
-      transparent 50%,
-      rgba(0, 0, 0, 0.1) 50%,
-      rgba(0, 0, 0, 0.1) 100%
-    );
+  background: linear-gradient(
+    45deg,
+    transparent 0%,
+    transparent 50%,
+    rgba(0, 0, 0, 0.1) 50%,
+    rgba(0, 0, 0, 0.1) 100%
+  );
   background-size: 20px 20px;
   opacity: 0.3; /* Opacidad sutil */
   z-index: 0;
 }
-
 
 .comic-title {
   font-family: "Bangers", cursive;
@@ -212,14 +214,13 @@ body {
   box-shadow: 4px 4px 0 var(--comic-shadow); /* Sombra más pequeña para paneles internos */
   box-sizing: border-box;
   width: 100%;
-  overflow: hidden; /* Para detalles internos */
+  overflow: visible; /* Para detalles internos */
 }
 
 /* Estilo alternativo para algunos paneles si se necesita */
 .comic-panel.alt-bg {
-    background: var(--comic-panel-alt-bg);
+  background: var(--comic-panel-alt-bg);
 }
-
 
 .comic-panel .comic-label {
   font-family: "Bangers", cursive;
@@ -240,26 +241,25 @@ body {
 
 /* Detalle de "Pow!" o "Bam!" detrás de la etiqueta */
 .comic-panel .comic-label::after {
-    content: "!"; /* O puedes usar un icono o una imagen de fondo */
-    font-family: "Bangers", cursive;
-    font-size: 2rem;
-    color: var(--comic-red);
-    position: absolute;
-    top: 50%;
-    right: -15px; /* Posicionar fuera de la etiqueta */
-    transform: translateY(-50%) rotate(15deg);
-    text-shadow: 1px 1px 0 var(--comic-black);
-    z-index: -1; /* Detrás de la etiqueta */
-    opacity: 0.7;
+  content: "!"; /* O puedes usar un icono o una imagen de fondo */
+  font-family: "Bangers", cursive;
+  font-size: 2rem;
+  color: var(--comic-red);
+  position: absolute;
+  top: 50%;
+  right: -15px; /* Posicionar fuera de la etiqueta */
+  transform: translateY(-50%) rotate(15deg);
+  text-shadow: 1px 1px 0 var(--comic-black);
+  z-index: -1; /* Detrás de la etiqueta */
+  opacity: 0.7;
 }
-
 
 .setup {
   font-size: 1.5rem; /* Tamaño de fuente más grande */
   font-weight: 700;
   color: var(--comic-black);
   margin-bottom: 15px;
-  text-shadow: 1px 1px 0 rgba(0,0,0,0.1); /* Sombra sutil al texto */
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.1); /* Sombra sutil al texto */
 }
 
 .delivery {
@@ -284,7 +284,6 @@ body {
 
 /* Estilo para cada panel dentro del controls-container */
 /* Ya definido arriba con .comic-panel */
-
 
 .radio-group,
 .checkbox-group {
@@ -334,7 +333,7 @@ h3 {
 }
 
 .comic-checkbox:checked {
-    transform: scale(1.1); /* Ligeramente más grande al marcar */
+  transform: scale(1.1); /* Ligeramente más grande al marcar */
 }
 
 .comic-checkbox:disabled {
@@ -366,7 +365,7 @@ h3 {
   display: flex;
   align-items: center;
   justify-content: center;
-   transition: transform 0.2s ease-out; /* Animación al hacer click */
+  transition: transform 0.2s ease-out; /* Animación al hacer click */
 }
 
 .comic-radio:checked::after {
@@ -380,9 +379,8 @@ h3 {
 }
 
 .comic-radio:checked {
-     transform: scale(1.1); /* Ligeramente más grande al marcar */
+  transform: scale(1.1); /* Ligeramente más grande al marcar */
 }
-
 
 /* Comic Button */
 .get-joke-btn {
@@ -426,7 +424,7 @@ h3 {
   border: var(--comic-border-thick); /* Borde más grueso */
   padding: 30px; /* Más padding */
   border-radius: 10px;
-  color: var(--comic-red); /* Color de error */
+  color: var(--comic-black); /* Color de error */
   font-weight: 700;
   text-align: center;
   box-shadow: 6px 6px 0 var(--comic-shadow); /* Sombra más pronunciada */
@@ -500,7 +498,7 @@ h3 {
 }
 
 .comic-slider:hover {
-    box-shadow: inset 3px 3px 6px rgba(0, 0, 0, 0.5); /* Sombra interna más oscura al pasar el ratón */
+  box-shadow: inset 3px 3px 6px rgba(0, 0, 0, 0.5); /* Sombra interna más oscura al pasar el ratón */
 }
 
 .comic-slider::-webkit-slider-thumb {
@@ -553,16 +551,15 @@ h3 {
 .comic-slider::-moz-range-thumb:hover {
   background: var(--comic-blue);
   border-color: var(--comic-black);
-   transform: scale(1.1); /* Ligeramente más grande al pasar el ratón */
+  transform: scale(1.1); /* Ligeramente más grande al pasar el ratón */
 }
 
 .comic-slider::-moz-range-thumb:active {
   background: var(--comic-yellow);
   border-color: var(--comic-black);
   box-shadow: 1px 1px 0 var(--comic-black);
-   transform: translate(2px, 2px); /* Se hunde un poco al hacer click */
+  transform: translate(2px, 2px); /* Se hunde un poco al hacer click */
 }
-
 
 .amount-display {
   display: inline-block;
@@ -576,7 +573,7 @@ h3 {
   margin-top: 15px; /* Más espacio arriba */
   text-shadow: 2px 2px 0 var(--comic-black); /* Sombra más pronunciada */
   box-shadow: 3px 3px 0 var(--comic-shadow); /* Sombra */
-   transform: rotate(2deg); /* Ligera rotación */
+  transform: rotate(2deg); /* Ligera rotación */
 }
 
 /* Search Input */
@@ -619,13 +616,12 @@ label {
   line-height: 1.5; /* Mejorar interlineado */
   margin: 8px 0; /* Más espacio */
   cursor: pointer; /* Indicar que la etiqueta es interactiva */
-  text-shadow: 0.5px 0.5px 0 rgba(0,0,0,0.1); /* Sombra sutil */
+  text-shadow: 0.5px 0.5px 0 rgba(0, 0, 0, 0.1); /* Sombra sutil */
 }
 
 label:hover {
-    color: var(--comic-blue); /* Cambiar color al pasar el ratón */
+  color: var(--comic-blue); /* Cambiar color al pasar el ratón */
 }
-
 
 /* Media Queries para responsividad básica */
 @media (max-width: 600px) {
@@ -649,26 +645,25 @@ label:hover {
     box-shadow: 5px 5px 0 var(--comic-shadow); /* Reducir sombra */
   }
 
-   .comic-header {
-       box-shadow: 8px 8px 0 var(--comic-shadow);
-   }
+  .comic-header {
+    box-shadow: 8px 8px 0 var(--comic-shadow);
+  }
 
   .joke-container::after,
   .joke-container::before {
     left: 30px; /* Ajustar posición de la cola */
-     bottom: -30px;
-     border-left: 25px solid transparent;
-     border-right: 25px solid transparent;
-     border-top: 30px solid var(--comic-black);
+    bottom: -30px;
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+    border-top: 30px solid var(--comic-black);
   }
 
-   .joke-container::before {
-       bottom: -26px;
-        border-left: 23px solid transparent;
-        border-right: 23px solid transparent;
-        border-top: 27px solid var(--comic-white);
-   }
-
+  .joke-container::before {
+    bottom: -26px;
+    border-left: 23px solid transparent;
+    border-right: 23px solid transparent;
+    border-top: 27px solid var(--comic-white);
+  }
 
   .setup,
   .delivery {
@@ -682,14 +677,13 @@ label:hover {
   .get-joke-btn {
     font-size: 1.5rem; /* Reducir tamaño del botón */
     padding: 12px 30px;
-     box-shadow: 5px 5px 0 var(--comic-shadow);
+    box-shadow: 5px 5px 0 var(--comic-shadow);
   }
 
-    .get-joke-btn:active {
-        transform: translate(5px, 5px);
-        box-shadow: 0 0 0 var(--comic-shadow);
-    }
-
+  .get-joke-btn:active {
+    transform: translate(5px, 5px);
+    box-shadow: 0 0 0 var(--comic-shadow);
+  }
 
   .radio-group,
   .checkbox-group {
@@ -718,7 +712,7 @@ label:hover {
   .comic-slider::-moz-range-thumb {
     width: 30px; /* Reducir tamaño del thumb del slider */
     height: 30px;
-     margin-top: -7px;
+    margin-top: -7px;
   }
 
   .amount-display {
@@ -729,39 +723,37 @@ label:hover {
   .comic-search {
     font-size: 1.1rem; /* Reducir tamaño del input de búsqueda */
     padding: 12px;
-     box-shadow: 3px 3px 0 var(--comic-shadow);
+    box-shadow: 3px 3px 0 var(--comic-shadow);
   }
 
-   .comic-search:focus {
-        box-shadow: 3px 3px 0 var(--comic-blue);
-   }
-
+  .comic-search:focus {
+    box-shadow: 3px 3px 0 var(--comic-blue);
+  }
 
   label {
     font-size: 1.1rem; /* Reducir tamaño de las etiquetas */
   }
 
-   .error-message {
-       padding: 20px;
-        box-shadow: 5px 5px 0 var(--comic-shadow);
-   }
+  .error-message {
+    padding: 20px;
+    box-shadow: 5px 5px 0 var(--comic-shadow);
+  }
 
-   .error-message h2 {
-       font-size: 2rem;
-   }
+  .error-message h2 {
+    font-size: 2rem;
+  }
 
-   .error-message p {
-       font-size: 1.1rem;
-   }
+  .error-message p {
+    font-size: 1.1rem;
+  }
 
-   .error-message button {
-       padding: 10px 20px;
-        font-size: 1.3rem;
-   }
+  .error-message button {
+    padding: 10px 20px;
+    font-size: 1.3rem;
+  }
 
-   .loading-indicator {
-       font-size: 2rem;
-        padding: 20px;
-   }
-
+  .loading-indicator {
+    font-size: 2rem;
+    padding: 20px;
+  }
 }

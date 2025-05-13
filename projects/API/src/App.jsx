@@ -234,7 +234,7 @@ function App() {
       padding: "15px 20px", // Consistent padding
       cursor: "pointer",
       backgroundColor: state.isSelected
-        ? "var(--comic-red)"
+        ? "var(--comic-blue)"
         : state.isFocused
           ? "var(--comic-yellow)"
           : "var(--comic-white)",
@@ -403,7 +403,7 @@ function App() {
 
         <div className="comic-panel">
           <h3>Language</h3>
-          <div className="comic-select-wrapper">
+          <div>
             <Select
               styles={comicSelectStyles}
               options={languageOptions}
@@ -430,28 +430,18 @@ function App() {
           </label>
         </div>
 
-        <div className="comic-panel blacklist-panel">
+        <div className="comic-panel">
           <h3>Content Filters 🚫</h3>
           <div className="checkbox-group">
             {Object.keys(options.blackListFlags).map((flag) => (
-              <label
-                key={flag}
-                className={`flag-item ${options.blackListFlags[flag] ? "active" : ""}`}
-                onClick={() => handleBlacklistToggle(flag)}
-              >
-                <span className="flag-emoji">
-                  {
-                    {
-                      nsfw: "🔞",
-                      religious: "⛪",
-                      political: "🏛️",
-                      racist: "🙅",
-                      sexist: "🚺",
-                      explicit: "🔞",
-                    }[flag]
-                  }
-                </span>
-                <span>{flag.toUpperCase()}</span>
+              <label key={flag}>
+                <input
+                  type="checkbox"
+                  checked={options.blackListFlags[flag]}
+                  onChange={() => handleBlacklistToggle(flag)}
+                  className="comic-checkbox"
+                />
+                {flag.charAt(0).toUpperCase() + flag.slice(1)}
               </label>
             ))}
           </div>
