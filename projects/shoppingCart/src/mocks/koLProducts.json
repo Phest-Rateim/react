@@ -1,0 +1,972 @@
+[
+  {
+    "id": 1,
+    "kolTitle": "Essence of Lash Enchantment",
+    "kolDescription": "Wand of False Eyelash Summoning (+3 to Seduction, -2 to Blinking)"
+  },
+  {
+    "id": 2,
+    "kolTitle": "Palette of Ocular Sorcery",
+    "kolDescription": "Color Grimoire for Face Wizards (Warning: May Cause Unintended Beauty)"
+  },
+  {
+    "id": 3,
+    "kolTitle": "Canister of Vanishing Shine",
+    "kolDescription": "Pixie Dust for Greasy Adventurers (Now With 20% More Matte)"
+  },
+  {
+    "id": 4,
+    "kolTitle": "Stick of Crimson Seduction",
+    "kolDescription": "Lip Weapon (+5 Charisma, -3 Practicality, Stains Everything)"
+  },
+  {
+    "id": 5,
+    "kolTitle": "Vial of Bloody Claws",
+    "kolDescription": "Nail Armor for Scratchers of Foes (+2 Intimidation)"
+  },
+  {
+    "id": 6,
+    "kolTitle": "Elixir of Ambiguous Gender",
+    "kolDescription": "Bottled Confusion (+10 to Androgyny Checks)"
+  },
+  {
+    "id": 7,
+    "kolTitle": "Perfume of Midnight Temptations",
+    "kolDescription": "Scent of a Doomed Romance (Now With Extra Melodrama)"
+  },
+  {
+    "id": 8,
+    "kolTitle": "Essence of Floral Pretension",
+    "kolDescription": "Liquid Bouquet for the Overly Fancy"
+  },
+  {
+    "id": 9,
+    "kolTitle": "Potion of Mediterranean Sun",
+    "kolDescription": "Bottled Italian Vacation (+5 Tan, -10 Wallet)"
+  },
+  {
+    "id": 10,
+    "kolTitle": "Bloom of Doomed Gardens",
+    "kolDescription": "Floral Stench for the Hopeless Romantic"
+  },
+  {
+    "id": 11,
+    "kolTitle": "Royal Slumber Coffin",
+    "kolDescription": "Bed of Questionable Comfort (+5 Pretension, -50 Gold)"
+  },
+  {
+    "id": 12,
+    "kolTitle": "Throne of Uncomfortable Sitting",
+    "kolDescription": "Sofa of False Luxury (+3 Status, -10 Spine Health)"
+  },
+  {
+    "id": 13,
+    "kolTitle": "Nightstand of Forgotten Items",
+    "kolDescription": "Table of Lost Socks and Broken Dreams"
+  },
+  {
+    "id": 14,
+    "kolTitle": "Chair of Corporate Domination",
+    "kolDescription": "Seat of Power Point (+5 Boredom Resistance)"
+  },
+  {
+    "id": 15,
+    "kolTitle": "Mirror of Bathroom Truths",
+    "kolDescription": "Reflective Surface of Morning Regret"
+  },
+  {
+    "id": 16,
+    "kolTitle": "Forbidden Fruit (Diet Edition)",
+    "kolDescription": "Eve's Snack Lite (Now With 30% Less Original Sin)"
+  },
+  {
+    "id": 17,
+    "kolTitle": "Flesh of Angry Bovine",
+    "kolDescription": "Moo Corpse Slab (+5 Protein, -3 Animal Friendship)"
+  },
+  {
+    "id": 18,
+    "kolTitle": "Kibble of Feline Overlords",
+    "kolDescription": "Tribute for Your Fuzzy Dictator"
+  },
+  {
+    "id": 19,
+    "kolTitle": "Flesh of Flightless Bird",
+    "kolDescription": "Cluck Nuggets (+5 Hunger Reduction)"
+  },
+  {
+    "id": 20,
+    "kolTitle": "Liquid of Slippery Regret",
+    "kolDescription": "Grease for Frying Your Dreams"
+  },
+  {
+    "id": 21,
+    "kolTitle": "Phallic Water Stick",
+    "kolDescription": "Nature's Most Suggestive Vegetable"
+  },
+  {
+    "id": 22,
+    "kolTitle": "Kibble of Canine Servants",
+    "kolDescription": "Bribes for Man's Second Best Friend"
+  },
+  {
+    "id": 23,
+    "kolTitle": "Ovum of Future Chickens",
+    "kolDescription": "Potential Poultry in Calcium Prisons"
+  },
+  {
+    "id": 24,
+    "kolTitle": "Flesh of Aquatic Victims",
+    "kolDescription": "Murdered Mermaid Steaks"
+  },
+  {
+    "id": 25,
+    "kolTitle": "Bell of Green Blandness",
+    "kolDescription": "Crunchy Water Balloon of Salad Doom"
+  },
+  {
+    "id": 26,
+    "kolTitle": "Pepper of Fiery Regret",
+    "kolDescription": "Tiny Green Pain Pods"
+  },
+  {
+    "id": 27,
+    "kolTitle": "Jar of Bee Vomit",
+    "kolDescription": "Golden Sticky Lies (Never Spoils!)"
+  },
+  {
+    "id": 28,
+    "kolTitle": "Cream of Frozen Despair",
+    "kolDescription": "Dairy-Based Emotional Support"
+  },
+  {
+    "id": 29,
+    "kolTitle": "Liquid of Questionable Fruit",
+    "kolDescription": "Probably Contains Some Vitamin C"
+  },
+  {
+    "id": 30,
+    "kolTitle": "Fuzzy Egg of Tartness",
+    "kolDescription": "Nature's Sour Candy (Now With Seeds!)"
+  },
+  {
+    "id": 31,
+    "kolTitle": "Yellow Orb of Sourness",
+    "kolDescription": "Citrus Grenade (+5 Vitamin C, -2 Tooth Enamel)"
+  },
+  {
+    "id": 32,
+    "kolTitle": "Liquid of Bovine Extraction",
+    "kolDescription": "Cow Juice (Lactose Optional)"
+  },
+  {
+    "id": 33,
+    "kolTitle": "Berries of Staining Doom",
+    "kolDescription": "Nature's Purple Paint Bombs"
+  },
+  {
+    "id": 34,
+    "kolTitle": "Ground Beans of Wakefulness",
+    "kolDescription": "Bitter Morning Motivation Powder"
+  },
+  {
+    "id": 35,
+    "kolTitle": "Tubers of Starchy Despair",
+    "kolDescription": "Lumpy White Sadness (Now Fryable!)"
+  },
+  {
+    "id": 36,
+    "kolTitle": "Powder of Fake Muscles",
+    "kolDescription": "Gym Bro Pixie Dust (+5 Protein, -3 Taste Buds)"
+  },
+  {
+    "id": 37,
+    "kolTitle": "Bulbs of Tearful Cooking",
+    "kolDescription": "Vampire Repellent Vegetables"
+  },
+  {
+    "id": 38,
+    "kolTitle": "Grains of Endless Meals",
+    "kolDescription": "Student Survival Pebbles"
+  },
+  {
+    "id": 39,
+    "kolTitle": "Liquid of Carbonated Lies",
+    "kolDescription": "Bubbly False Happiness in a Can"
+  },
+  {
+    "id": 40,
+    "kolTitle": "Berries of False Promise",
+    "kolDescription": "Red Heart-Shaped Betrayal Fruits"
+  },
+  {
+    "id": 41,
+    "kolTitle": "Box of Sadness Squares",
+    "kolDescription": "Tissues for Your Inevitable Downfall"
+  },
+  {
+    "id": 42,
+    "kolTitle": "Bottle of Wet Stuff",
+    "kolDescription": "Literally Just H2O (Now With 400% Markup!)"
+  },
+  {
+    "id": 43,
+    "kolTitle": "Swing of Pointless Decoration",
+    "kolDescription": "Useless Hanging Thing (+5 Aesthetic, -10 Functionality)"
+  },
+  {
+    "id": 44,
+    "kolTitle": "Frame of Genetic Obligation",
+    "kolDescription": "Shrine to Relatives You Pretend to Like"
+  },
+  {
+    "id": 45,
+    "kolTitle": "Plant of False Life",
+    "kolDescription": "Plastic Imitation Nature (Hard to Kill!)"
+  },
+  {
+    "id": 46,
+    "kolTitle": "Prison for Real Plants",
+    "kolDescription": "Ceramic Coffin for Your Chlorophyll Friends"
+  },
+  {
+    "id": 47,
+    "kolTitle": "Orb of Artificial Sun",
+    "kolDescription": "Tiny Fake Daylight on a Stick"
+  },
+  {
+    "id": 48,
+    "kolTitle": "Stick of Culinary Heresy",
+    "kolDescription": "Bamboo Betrayer of Eggs Everywhere"
+  },
+  {
+    "id": 49,
+    "kolTitle": "Chalice of Morning Regret",
+    "kolDescription": "Metal Cup for Bitter Wake-Up Juice"
+  },
+  {
+    "id": 50,
+    "kolTitle": "Whisk of Culinary Chaos",
+    "kolDescription": "Egg-Beater of Doom (+5 Cooking, -3 Sanity)"
+  },
+  {
+    "id": 51,
+    "kolTitle": "Box of Angry Blending",
+    "kolDescription": "Noise Maker of Smoothie Destruction"
+  },
+  {
+    "id": 52,
+    "kolTitle": "Wok of Stirred Fate",
+    "kolDescription": "Cauldron for Questionable Fusion Cuisine"
+  },
+  {
+    "id": 53,
+    "kolTitle": "Board of Chopped Dreams",
+    "kolDescription": "Wooden Altar for Vegetable Sacrifices"
+  },
+  {
+    "id": 54,
+    "kolTitle": "Press of Citrus Torment",
+    "kolDescription": "Lemon's Worst Nightmare"
+  },
+  {
+    "id": 55,
+    "kolTitle": "Guillotine for Eggs",
+    "kolDescription": "Perfect Slices Every Time (Eggs Hate This!)"
+  },
+  {
+    "id": 56,
+    "kolTitle": "Box of Uneven Heating",
+    "kolDescription": "Hot Spot Creator for Burnt Food"
+  },
+  {
+    "id": 57,
+    "kolTitle": "Sieve of Kitchen Pedantry",
+    "kolDescription": "For When Lumps Are Unacceptable"
+  },
+  {
+    "id": 58,
+    "kolTitle": "Trident of Salad Stabbing",
+    "kolDescription": "Three-Pronged Veggie Assassin"
+  },
+  {
+    "id": 59,
+    "kolTitle": "Vessel of Transparent Lies",
+    "kolDescription": "Glass That Claims to Be Unbreakable"
+  },
+  {
+    "id": 60,
+    "kolTitle": "Grater of Knuckle Doom",
+    "kolDescription": "Finger Shredder Disguised as Tool"
+  },
+  {
+    "id": 61,
+    "kolTitle": "Wand of Soup Destruction",
+    "kolDescription": "Handheld Blender of Chaos"
+  },
+  {
+    "id": 62,
+    "kolTitle": "Mold of Frozen Tears",
+    "kolDescription": "Maker of Regret Cubes"
+  },
+  {
+    "id": 63,
+    "kolTitle": "Sieve of Kitchen Fastidiousness",
+    "kolDescription": "For Those Who Fear Lumps"
+  },
+  {
+    "id": 64,
+    "kolTitle": "Blade of Kitchen Danger",
+    "kolDescription": "Sharpest Tool in Your House (Literally)"
+  },
+  {
+    "id": 65,
+    "kolTitle": "Box of Segregated Lunch",
+    "kolDescription": "Prison for Your Midday Meal"
+  },
+  {
+    "id": 66,
+    "kolTitle": "Box of Radioactive Leftovers",
+    "kolDescription": "Cold Spot Creator for Lukewarm Food"
+  },
+  {
+    "id": 67,
+    "kolTitle": "Tree of Mug Imprisonment",
+    "kolDescription": "Holder for Your Caffeinated Chalices"
+  },
+  {
+    "id": 68,
+    "kolTitle": "Pan of Sticky Doom",
+    "kolDescription": "Surface for Burning Your Ambitions"
+  },
+  {
+    "id": 69,
+    "kolTitle": "Disk of Food Presentation",
+    "kolDescription": "Ceramic Canvas for Your Culinary Crimes"
+  },
+  {
+    "id": 70,
+    "kolTitle": "Tongs of Fiery Retrieval",
+    "kolDescription": "Scorched Fingers Be Gone!"
+  },
+  {
+    "id": 71,
+    "kolTitle": "Cauldron with Glass Peephole",
+    "kolDescription": "For Watching Your Soup Boil (Exciting!)"
+  },
+  {
+    "id": 72,
+    "kolTitle": "Turner of Slotted Mystery",
+    "kolDescription": "Why the Holes? Nobody Knows."
+  },
+  {
+    "id": 73,
+    "kolTitle": "Rack of Spicy Secrets",
+    "kolDescription": "Organized Collection of Questionable Powders"
+  },
+  {
+    "id": 74,
+    "kolTitle": "Shovel of Liquid Consumption",
+    "kolDescription": "For When Drinking Like a Child Is Acceptable"
+  },
+  {
+    "id": 75,
+    "kolTitle": "Platter of Pretentious Serving",
+    "kolDescription": "Carry Your Snacks with False Elegance"
+  },
+  {
+    "id": 76,
+    "kolTitle": "Roller of Dough Torture",
+    "kolDescription": "Baker's Weapon of Crust Destruction"
+  },
+  {
+    "id": 77,
+    "kolTitle": "Peeler of Vegetable Suffering",
+    "kolDescription": "Skin Stripper for Produce"
+  },
+  {
+    "id": 78,
+    "kolTitle": "Tome of Infinite Distraction",
+    "kolDescription": "Portable Screen of Procrastination"
+  },
+  {
+    "id": 79,
+    "kolTitle": "Tome of Dual Screen Sorcery",
+    "kolDescription": "Double the Distraction, Half the Productivity"
+  },
+  {
+    "id": 80,
+    "kolTitle": "Tome of Corporate Espionage",
+    "kolDescription": "Sleek Device of Questionable Security"
+  },
+  {
+    "id": 81,
+    "kolTitle": "Tome of Flexible Pretense",
+    "kolDescription": "For Those Who Can't Decide Between Work and Play"
+  },
+  {
+    "id": 82,
+    "kolTitle": "Tome of Borderless Vanity",
+    "kolDescription": "Screen of Infinite Reflection (Literally)"
+  },
+  {
+    "id": 83,
+    "kolTitle": "Shirt of Checkered Confusion",
+    "kolDescription": "Pattern Designed to Hypnotize Onlookers"
+  },
+  {
+    "id": 84,
+    "kolTitle": "Shirt of Gamer Shame",
+    "kolDescription": "Billboard for Your Questionable Hobbies"
+  },
+  {
+    "id": 85,
+    "kolTitle": "Shirt of Lumberjack Cosplay",
+    "kolDescription": "For Urbanites Who Miss Trees"
+  },
+  {
+    "id": 86,
+    "kolTitle": "Shirt of Sleeveless Rebellion",
+    "kolDescription": "Arm Freedom for the Brave"
+  },
+  {
+    "id": 87,
+    "kolTitle": "Shirt of Plaid Deception",
+    "kolDescription": "Looks Fancy, Still Just Cotton"
+  },
+  {
+    "id": 88,
+    "kolTitle": "Sneakers of Airy Legend",
+    "kolDescription": "Footwear of Basketball Gods (Warning: Does Not Make You Jump Higher)"
+  },
+  {
+    "id": 89,
+    "kolTitle": "Cleats of Diamond Domination",
+    "kolDescription": "Spiked Shoes for Base-Related Violence"
+  },
+  {
+    "id": 90,
+    "kolTitle": "Sneakers of Retro Futurism",
+    "kolDescription": "Footwear That Promised Jetpacks But Only Gave Blisters"
+  },
+  {
+    "id": 91,
+    "kolTitle": "Sneakers of Chromatic Speed",
+    "kolDescription": "Racing Shoes That Make You 0.3% Faster (Placebo Effect)"
+  },
+  {
+    "id": 92,
+    "kolTitle": "Sneakers of Off-White Mystery",
+    "kolDescription": "Footwear That's Probably Art (Or a Stain)"
+  },
+  {
+    "id": 93,
+    "kolTitle": "Chronometer of Leather Vanity",
+    "kolDescription": "Timepiece for Those Who Need to Impress Others"
+  },
+  {
+    "id": 94,
+    "kolTitle": "Chronometer of Swiss Precision",
+    "kolDescription": "Tells Time Expensively"
+  },
+  {
+    "id": 95,
+    "kolTitle": "Chronometer of Black Dialed Luxury",
+    "kolDescription": "Because Knowing the Time Should Cost a Mortgage"
+  },
+  {
+    "id": 96,
+    "kolTitle": "Chronometer of Lunar Fascination",
+    "kolDescription": "Tells Time and Moon Phases (Usefulness Debated)"
+  },
+  {
+    "id": 97,
+    "kolTitle": "Chronometer of Just Dates",
+    "kolDescription": "For Those Who Need to Know What Day It Is (Rich People)"
+  },
+  {
+    "id": 98,
+    "kolTitle": "Chronometer of Aquatic Pretense",
+    "kolDescription": "Dive Watch for People Who Only Swim in Pools"
+  },
+  {
+    "id": 99,
+    "kolTitle": "Orb of Digital Servitude",
+    "kolDescription": "Spy Device Disguised as Helper"
+  },
+  {
+    "id": 100,
+    "kolTitle": "Earbuds of Wireless Sorcery",
+    "kolDescription": "Tiny Sound Sticks That Get Lost Constantly"
+  },
+  {
+    "id": 101,
+    "kolTitle": "Headphones of Metallic Luxury",
+    "kolDescription": "Ear Cans for the Audiophile Elite"
+  },
+  {
+    "id": 102,
+    "kolTitle": "Pad of Wireless Frustration",
+    "kolDescription": "Charger That Never Works Right"
+  },
+  {
+    "id": 103,
+    "kolTitle": "Orb of Grey Domestic Spying",
+    "kolDescription": "Small Speaker That Judges Your Music Taste"
+  },
+  {
+    "id": 104,
+    "kolTitle": "Cable of Perpetual Disconnection",
+    "kolDescription": "Wire That Fails at the Worst Moment"
+  },
+  {
+    "id": 105,
+    "kolTitle": "Pack of Temporary Power",
+    "kolDescription": "Battery That Dies When You Need It Most"
+  },
+  {
+    "id": 106,
+    "kolTitle": "Bracelet of Golden Surveillance",
+    "kolDescription": "Wrist Spy That Counts Your Steps (Why?)"
+  },
+  {
+    "id": 107,
+    "kolTitle": "Earbuds of Flexible Disappointment",
+    "kolDescription": "Wireless Until They're Not"
+  },
+  {
+    "id": 108,
+    "kolTitle": "Case of Plum Protection",
+    "kolDescription": "Phone Armor in Questionable Color"
+  },
+  {
+    "id": 109,
+    "kolTitle": "Stick of Selfie Vanity",
+    "kolDescription": "Pole for Extending Your Narcissism"
+  },
+  {
+    "id": 110,
+    "kolTitle": "Lamp of Artificial Flattery",
+    "kolDescription": "Light That Makes You Look Less Tired (Lies)"
+  },
+  {
+    "id": 111,
+    "kolTitle": "Stick of Extended Narcissism",
+    "kolDescription": "For Those Who Can't Hold Their Own Phone"
+  },
+  {
+    "id": 112,
+    "kolTitle": "Pedestal of Television Ego",
+    "kolDescription": "Stand for Camera That Films Your Bad Acting"
+  },
+  {
+    "id": 113,
+    "kolTitle": "Steed of Generic Roaring",
+    "kolDescription": "Two-Wheeled Metal Horse (Vroom Optional)"
+  },
+  {
+    "id": 114,
+    "kolTitle": "Steed of Kawasaki Fury",
+    "kolDescription": "Angry Japanese Metal Horse"
+  },
+  {
+    "id": 115,
+    "kolTitle": "Steed of Racing Pretension",
+    "kolDescription": "Fast Bike for Slow Riders"
+  },
+  {
+    "id": 116,
+    "kolTitle": "Steed of Urban Compromise",
+    "kolDescription": "Moped for Those Who Can't Commit"
+  },
+  {
+    "id": 117,
+    "kolTitle": "Steed of Speed Fantasies",
+    "kolDescription": "Fast Bike You'll Never Ride Fast"
+  },
+  {
+    "id": 118,
+    "kolTitle": "Soap of Leafy Deception",
+    "kolDescription": "Cleanser That Claims to Be Natural (It's Not)"
+  },
+  {
+    "id": 119,
+    "kolTitle": "Wash of Buttery False Promises",
+    "kolDescription": "Cleanser That Claims to Moisturize (Barely)"
+  },
+  {
+    "id": 120,
+    "kolTitle": "Lotion of Manly Scent",
+    "kolDescription": "Moisturizer That Smells Like 'Not Flowers'"
+  },
+  {
+    "id": 121,
+    "kolTitle": "Tome of Outdated Magic",
+    "kolDescription": "Ancient Scroll of Slow Loading"
+  },
+  {
+    "id": 122,
+    "kolTitle": "Tome of Slightly Newer Magic",
+    "kolDescription": "Scroll That's Almost Obsolete"
+  },
+  {
+    "id": 123,
+    "kolTitle": "Tome of Pro Photography",
+    "kolDescription": "Expensive Camera That You'll Only Use for Selfies"
+  },
+  {
+    "id": 124,
+    "kolTitle": "Tome of Facial Recognition",
+    "kolDescription": "Scroll That Unlocks With Your Face (Scary)"
+  },
+  {
+    "id": 125,
+    "kolTitle": "Tome of Budget Sorcery",
+    "kolDescription": "Cheap Scroll That Kinda Works"
+  },
+  {
+    "id": 126,
+    "kolTitle": "Tome of Camera Obsession",
+    "kolDescription": "Scroll for Those Who Take Too Many Selfies"
+  },
+  {
+    "id": 127,
+    "kolTitle": "Tome of K-Series Mystery",
+    "kolDescription": "Nobody Knows What the K Stands For"
+  },
+  {
+    "id": 128,
+    "kolTitle": "Tome of Basic Spells",
+    "kolDescription": "Scroll for Those Who Don't Need Fancy Magic"
+  },
+  {
+    "id": 129,
+    "kolTitle": "Tome of X-Treme Nothing",
+    "kolDescription": "Scroll That Claims to Be Edgy (It's Not)"
+  },
+  {
+    "id": 130,
+    "kolTitle": "Tome of Camera Overcompensation",
+    "kolDescription": "Scroll for Those Who Need Four Lenses"
+  },
+  {
+    "id": 131,
+    "kolTitle": "Tome of Samsung Legacy",
+    "kolDescription": "Ancient Scroll That Exploded Sometimes"
+  },
+  {
+    "id": 132,
+    "kolTitle": "Tome of Borderless Vanity II",
+    "kolDescription": "Newer Screen of Infinite Reflection"
+  },
+  {
+    "id": 133,
+    "kolTitle": "Tome of Samsung Decade",
+    "kolDescription": "Scroll That Was Almost Perfect (Almost)"
+  },
+  {
+    "id": 134,
+    "kolTitle": "Tome of Vivo Mediocrity",
+    "kolDescription": "Scroll That Exists (That's Its Main Feature)"
+  },
+  {
+    "id": 135,
+    "kolTitle": "Tome of Vivo Selfies",
+    "kolDescription": "Scroll Designed for Duck Faces"
+  },
+  {
+    "id": 136,
+    "kolTitle": "Tome of X-Treme Who Cares",
+    "kolDescription": "Scroll With a Number Nobody Understands"
+  },
+  {
+    "id": 137,
+    "kolTitle": "Orb of Pigskin Violence",
+    "kolDescription": "Ball Designed for Concussions"
+  },
+  {
+    "id": 138,
+    "kolTitle": "Orb of Diamond Boredom",
+    "kolDescription": "Ball for America's Most Tedious Pastime"
+  },
+  {
+    "id": 139,
+    "kolTitle": "Glove of Ball Snatching",
+    "kolDescription": "Leather Hand Net for Catching Fast Objects (Ouch)"
+  },
+  {
+    "id": 140,
+    "kolTitle": "Orb of Hoop Dreams",
+    "kolDescription": "Bouncy Sphere of False Athletic Hope"
+  },
+  {
+    "id": 141,
+    "kolTitle": "Ring of Netted Dreams",
+    "kolDescription": "Circle Where Balls Go to Die"
+  },
+  {
+    "id": 142,
+    "kolTitle": "Orb of British Boredom",
+    "kolDescription": "Ball for Cricket (Whatever That Is)"
+  },
+  {
+    "id": 143,
+    "kolTitle": "Bat of British Swatting",
+    "kolDescription": "Flat Club for Hitting British Balls"
+  },
+  {
+    "id": 144,
+    "kolTitle": "Helmet of British Protection",
+    "kolDescription": "Hat for When Balls Attack Your Face"
+  },
+  {
+    "id": 145,
+    "kolTitle": "Sticks of British Target",
+    "kolDescription": "Wooden Things That Balls Knock Over"
+  },
+  {
+    "id": 146,
+    "kolTitle": "Birdie of Feathered Flight",
+    "kolDescription": "Tiny Fake Bird for Racquet Sports"
+  },
+  {
+    "id": 147,
+    "kolTitle": "Orb of Global Kicking",
+    "kolDescription": "Ball That Causes International Riots"
+  },
+  {
+    "id": 148,
+    "kolTitle": "Orb of Golfing Frustration",
+    "kolDescription": "Small White Sphere of Eternal Disappointment"
+  },
+  {
+    "id": 149,
+    "kolTitle": "Club of Iron Misery",
+    "kolDescription": "Stick for Hitting Balls Into Water"
+  },
+  {
+    "id": 150,
+    "kolTitle": "Bat of Metallic Hitting",
+    "kolDescription": "Metal Stick for Hitting Balls Really Far"
+  },
+  {
+    "id": 151,
+    "kolTitle": "Orb of Tennis Annoyance",
+    "kolDescription": "Yellow Fuzz Ball That Gets Lost Easily"
+  },
+  {
+    "id": 152,
+    "kolTitle": "Racket of Stringed Violence",
+    "kolDescription": "Net on a Stick for Hitting Fuzzy Balls"
+  },
+  {
+    "id": 153,
+    "kolTitle": "Orb of Beach Dominance",
+    "kolDescription": "Ball for Shirtless Athletic Displays"
+  },
+  {
+    "id": 154,
+    "kolTitle": "Shades of Solar Rejection",
+    "kolDescription": "Dark Lenses for Hiding Hangovers"
+  },
+  {
+    "id": 155,
+    "kolTitle": "Shades of Timeless Pretension",
+    "kolDescription": "Glasses That Never Go Out of Style (They Will)"
+  },
+  {
+    "id": 156,
+    "kolTitle": "Shades of Chromatic Mystery",
+    "kolDescription": "Glasses That Might Be Ugly (Hard to Tell)"
+  },
+  {
+    "id": 157,
+    "kolTitle": "Shades of Festive Obligation",
+    "kolDescription": "Glasses You Only Wear Once (Then Lose)"
+  },
+  {
+    "id": 158,
+    "kolTitle": "Shades of Basic Sun Protection",
+    "kolDescription": "Glasses That Do the Bare Minimum"
+  },
+  {
+    "id": 159,
+    "kolTitle": "Tome of Miniature Magic",
+    "kolDescription": "Smaller Scroll for Smaller Hands"
+  },
+  {
+    "id": 160,
+    "kolTitle": "Tome of Samsung Tabulation",
+    "kolDescription": "Big Scroll for Bigger Browsing"
+  },
+  {
+    "id": 161,
+    "kolTitle": "Tome of Samsung Whiteness",
+    "kolDescription": "Scroll That Gets Dirty Immediately"
+  },
+  {
+    "id": 162,
+    "kolTitle": "Gown of Azure Mystery",
+    "kolDescription": "Dress That Might Be Blue or Black (Lighting Dependent)"
+  },
+  {
+    "id": 163,
+    "kolTitle": "Gown of Solar Celebration",
+    "kolDescription": "Dress for Hot Weather and Poor Decisions"
+  },
+  {
+    "id": 164,
+    "kolTitle": "Gown of Chromatic Neutrality",
+    "kolDescription": "Dress That Goes With Everything (Boringly)"
+  },
+  {
+    "id": 165,
+    "kolTitle": "Gown of Hemline Rebellion",
+    "kolDescription": "Dress That Shows More Leg Than Grandma Approves"
+  },
+  {
+    "id": 166,
+    "kolTitle": "Gown of Plaid Confusion",
+    "kolDescription": "Dress That Looks Like a Tablecloth (Fancy!)"
+  },
+  {
+    "id": 167,
+    "kolTitle": "Chariot of 300 Luxury",
+    "kolDescription": "Car for People Who Like Numbers in Their Names"
+  },
+  {
+    "id": 168,
+    "kolTitle": "Chariot of SXT Mystery",
+    "kolDescription": "Car With Letters Nobody Understands"
+  },
+  {
+    "id": 169,
+    "kolTitle": "Chariot of Hornet Aggression",
+    "kolDescription": "Car That Sounds Angrier Than It Is"
+  },
+  {
+    "id": 170,
+    "kolTitle": "Chariot of Durango Bulk",
+    "kolDescription": "Car That Compensates for Something"
+  },
+  {
+    "id": 171,
+    "kolTitle": "Chariot of Pacifica Practicality",
+    "kolDescription": "Car for People Who Gave Up on Dreams"
+  },
+  {
+    "id": 172,
+    "kolTitle": "Pouch of Azure Carrying",
+    "kolDescription": "Bag for Holding Regrets and Receipts"
+  },
+  {
+    "id": 173,
+    "kolTitle": "Pouch of Leather Pretension",
+    "kolDescription": "Bag That Costs More Than Its Contents"
+  },
+  {
+    "id": 174,
+    "kolTitle": "Pouch of Prada Vanity",
+    "kolDescription": "Bag That's Basically a Status Symbol"
+  },
+  {
+    "id": 175,
+    "kolTitle": "Pack of Faux Leather Falsehoods",
+    "kolDescription": "Bag That Pretends to Be Fancy"
+  },
+  {
+    "id": 176,
+    "kolTitle": "Pouch of Dark Secrets",
+    "kolDescription": "Bag That Holds Everything and Matches Nothing"
+  },
+  {
+    "id": 177,
+    "kolTitle": "Gown of Midnight Darkness",
+    "kolDescription": "Dress for Funerals and Villainy"
+  },
+  {
+    "id": 178,
+    "kolTitle": "Gown of Corseted Suffering",
+    "kolDescription": "Dress That Prioritizes Looks Over Breathing"
+  },
+  {
+    "id": 179,
+    "kolTitle": "Gown of Blackened Corsetry",
+    "kolDescription": "Dress That's 50% Fabric, 50% Regret"
+  },
+  {
+    "id": 180,
+    "kolTitle": "Gown of Pea Idiocy",
+    "kolDescription": "Dress That Makes You Look Like a Vegetable"
+  },
+  {
+    "id": 181,
+    "kolTitle": "Suit of Chromatic Contrast",
+    "kolDescription": "Outfit That Says 'I'm Edgy' (You're Not)"
+  },
+  {
+    "id": 182,
+    "kolTitle": "Bauble of Verdant Sparkle",
+    "kolDescription": "Ear Jewelry That Catches Light (And Hair)"
+  },
+  {
+    "id": 183,
+    "kolTitle": "Bauble of Oval Mystery",
+    "kolDescription": "Ear Jewelry That Might Be Ugly (Hard to Tell)"
+  },
+  {
+    "id": 184,
+    "kolTitle": "Bauble of Island Kitsch",
+    "kolDescription": "Ear Jewelry for Fake Vacations"
+  },
+  {
+    "id": 185,
+    "kolTitle": "Slippers of Chromatic Comfort",
+    "kolDescription": "Shoes You Wear When Nobody's Looking"
+  },
+  {
+    "id": 186,
+    "kolTitle": "Pumps of Calvin Klein Torture",
+    "kolDescription": "Shoes That Hurt But Look Good"
+  },
+  {
+    "id": 187,
+    "kolTitle": "Shoes of Gilded Vanity",
+    "kolDescription": "Footwear That Screams 'Look at Me!'"
+  },
+  {
+    "id": 188,
+    "kolTitle": "Shoes of Pampi Mystery",
+    "kolDescription": "Nobody Knows What 'Pampi' Means"
+  },
+  {
+    "id": 189,
+    "kolTitle": "Shoes of Scarlet Seduction",
+    "kolDescription": "Footwear That Matches Your Poor Decisions"
+  },
+  {
+    "id": 190,
+    "kolTitle": "Chronometer of Engineering Pretense",
+    "kolDescription": "Watch for People Who Like Gears (But Don't Understand Them)"
+  },
+  {
+    "id": 191,
+    "kolTitle": "Chronometer of Lunar Fascination II",
+    "kolDescription": "Watch That Tracks Moon Phases (Again)"
+  },
+  {
+    "id": 192,
+    "kolTitle": "Chronometer of Feminine Dates",
+    "kolDescription": "Ladies' Watch That Costs Too Much"
+  },
+  {
+    "id": 193,
+    "kolTitle": "Chronometer of Gilded Vanity",
+    "kolDescription": "Watch That's Basically Jewelry"
+  },
+  {
+    "id": 194,
+    "kolTitle": "Chronometer of Wristed Time",
+    "kolDescription": "Watch That Tells Time (Revolutionary!)"
+  }
+]
